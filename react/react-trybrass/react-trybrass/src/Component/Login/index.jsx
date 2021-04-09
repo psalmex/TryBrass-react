@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "../Button/style.css";
+import Button from "../Button";
 import "./../Button";
-import Nav from './../Nav';
+// import Nav from "./../Nav";
 
 const Login = () => {
   const [inputs, setInputs] = useState({
@@ -25,8 +28,19 @@ const Login = () => {
 
   return (
     <div>
-      <div>
-        <Nav />
+      <div className="Nav">
+        <div>
+          <Link to="/">
+            <img
+              src="https://res.cloudinary.com/psalmex/image/upload/v1616396370/stadia%20gamer/trybrass_logo_1download_wutkbi.png"
+              alt=""
+              width="100px"
+            />
+          </Link>
+        </div>
+        <div>
+          <Button text={"Welcome"} />
+        </div>
       </div>
       <div>
         <form className="login">
@@ -53,7 +67,6 @@ const Login = () => {
             <input
               type="password"
               placeholder="Enter Password"
-              
               value={inputs.name}
               name="password"
               onChange={inputHandler}
